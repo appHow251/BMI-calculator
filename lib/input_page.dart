@@ -8,69 +8,65 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text('BMI CALCULATOR'),
-        ),
-        body: Column(
-          children: <Widget>[
-            Expanded(
-                child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      color: Colors.blueGrey[400],
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      color: Colors.blueGrey[400],
-                    ),
-                  ),
-                ),
-              ],
-            )),
-            Expanded(
-              child: Container(
-                margin: EdgeInsets.all(15.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Colors.blueGrey[400],
+    return Center(
+      child: Center(
+        child: Scaffold(
+            backgroundColor: Colors.blueGrey,
+            appBar: AppBar(
+              centerTitle: true,
+              title: Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(child: Text('BMI CALCULATOR')),
                 ),
               ),
             ),
-            Expanded(
-                child: Row(
+            body: Column(
               children: <Widget>[
                 Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      color: Colors.blueGrey[400],
+                    child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: ReusableCard(),
                     ),
-                  ),
+                    Expanded(
+                      child: ReusableCard(),
+                    ),
+                  ],
+                )),
+                Expanded(
+                  child: ReusableCard(),
                 ),
                 Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      color: Colors.blueGrey[400],
+                    child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: ReusableCard(),
                     ),
-                  ),
-                ),
+                    Expanded(
+                      child: ReusableCard(),
+                    ),
+                  ],
+                )),
               ],
             )),
-          ],
-        ));
+      ),
+    );
+  }
+}
+
+class ReusableCard extends StatelessWidget {
+  ReusableCard({this.color});
+  Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(15.0),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10.0),
+        color: Colors.blueGrey[400],
+      ),
+    );
   }
 }
